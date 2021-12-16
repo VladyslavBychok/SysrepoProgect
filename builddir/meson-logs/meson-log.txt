@@ -1,4 +1,4 @@
-Build started at 2021-12-15T13:34:56.899340
+Build started at 2021-12-16T12:18:34.336602
 Main binary: /usr/bin/python3
 Build Options: 
 Python system: Linux
@@ -74,8 +74,8 @@ Called `/usr/bin/pkg-config sysrepo-cpp --libs` -> 0
 -lsysrepo-cpp
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpczankvin
-Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpczankvin/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpczankvin/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
 
 Code:
  #include<stdio.h>
@@ -96,8 +96,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmp9rk4znmf
-Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmp9rk4znmf/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmp9rk4znmf/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  

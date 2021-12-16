@@ -9,6 +9,8 @@
 
 #include "../hpp/GeneratePath.hpp"
 
+class MobileClient;
+
 class INetConfAgent {
     public:
     INetConfAgent();
@@ -17,6 +19,7 @@ class INetConfAgent {
     virtual void changeData(const std::string& path, const std::string& str);
     virtual void registerOperData(const std::string& path, MobileClient& client);    
 
+    virtual ~INetConfAgent() = default;
     private:
 
     sysrepo::Connection _conn;
@@ -24,4 +27,5 @@ class INetConfAgent {
     GeneratePath _path;
     std::optional<sysrepo::Subscription> _sub;
     std::optional<sysrepo::Subscription> _subscribeOperData;
+    
 };

@@ -1,16 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <atomic>
-#include <optional>
-#include <sysrepo-cpp/Session.hpp>
-#include <sysrepo-cpp/Subscription.hpp>
-#include <sysrepo-cpp/Connection.hpp>
-
-#include "GeneratePath.hpp"
 #include "../api/INetConfAgent.hpp"
-
-class MobileClient;
 
 class NetConfAgent : public INetConfAgent
 {
@@ -51,5 +41,6 @@ class NetConfAgent : public INetConfAgent
     //std::atomic<int>  _called = 0;
     std::optional<sysrepo::Subscription> _sub;
     std::optional<sysrepo::Subscription> _subscribeOperData;
+    
     
 };

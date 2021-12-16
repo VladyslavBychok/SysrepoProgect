@@ -3,7 +3,6 @@
 
 NetConfAgent::NetConfAgent() : _conn(), _sess(_conn.sessionStart())
 {
-
     _sess.copyConfig(sysrepo::Datastore::Running, "Network");
 }
 
@@ -67,7 +66,7 @@ void NetConfAgent::registerOperData(const std::string& path, MobileClient& clien
     sysrepo::OperGetItemsCb operGetItemCb = [&](sysrepo::Session session, auto, auto, auto, auto, auto, auto) -> sysrepo::ErrorCode
     {
         std::string value = client.getName();
-        parent = session.getContext().newPath(path.c_str(), value.c_str());
+        auto parent = session.getContext().newPath(path.c_str(), value.c_str());
         statusError = sysrepo::ErrorCode::Ok;
         return statusError;
     };

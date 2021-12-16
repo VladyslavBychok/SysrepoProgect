@@ -43,19 +43,19 @@ build PHONY: phony
 
 build MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o: cpp_COMPILER ../MobileClient/sourse/NetConfAgent.cpp
  DEPFILE = MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o.d
- ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
+ ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
 
 build MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o: cpp_COMPILER ../MobileClient/sourse/MobileClient.cpp
  DEPFILE = MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o.d
- ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
+ ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
 
 build MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o: cpp_COMPILER ../MobileClient/sourse/GeneratePath.cpp
  DEPFILE = MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o.d
- ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
+ ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
 
 build MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o: cpp_COMPILER ../MobileClient/sourse/MobileService.cpp
  DEPFILE = MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o.d
- ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
+ ARGS = -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC
 
 build MobileClient/eaac78d@@sourse_lib@sha/libsourse_lib.so.symbols: SHSYM MobileClient/libsourse_lib.so
  IMPLIB = MobileClient/libsourse_lib.so
@@ -65,7 +65,7 @@ build MobileClient/libsourse_lib.so: cpp_LINKER MobileClient/eaac78d@@sourse_lib
 
 build demo@exe/main.cpp.o: cpp_COMPILER ../main.cpp
  DEPFILE = demo@exe/main.cpp.o.d
- ARGS = -Idemo@exe -I. -I.. -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g
+ ARGS = -Idemo@exe -I. -I.. -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g
 
 build demo: cpp_LINKER demo@exe/main.cpp.o | /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so MobileClient/eaac78d@@sourse_lib@sha/libsourse_lib.so.symbols
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group MobileClient/libsourse_lib.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so -Wl,--end-group '-Wl,-rpath,$$ORIGIN/MobileClient' '-Wl,-rpath-link,/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddir/MobileClient'
