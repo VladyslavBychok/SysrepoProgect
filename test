@@ -1,0 +1,37 @@
+<edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <target>
+      <running/>
+    </target>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <commutator xmlns="urn: Network">
+        <subscribers>
+		<subscriber>
+          		<number>Mike</number>
+			<incomingNumber>123</incomingNumber>
+		</subscriber>
+        </subscribers>
+      </commutator>
+    </config>
+  </edit-config>
+
+
+
+
+sudo rm -rf /dev/shm/sr_* /dev/shm/srsub_*
+
+
+<edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <target>
+      <running/>
+    </target>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <sports xmlns="testmodel">
+        <person>
+		<name>Mike</name>
+		<age>123</age>
+        </person>
+      </sports>
+    </config>
+  </edit-config>

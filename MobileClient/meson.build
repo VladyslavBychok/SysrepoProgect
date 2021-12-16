@@ -1,0 +1,6 @@
+source_cpp = files(['hpp/NetConfAgent.hpp', 'sourse/NetConfAgent.cpp', 'hpp/MobileClient.hpp', 'sourse/MobileClient.cpp', 'hpp/GeneratePath.hpp', 'sourse/GeneratePath.cpp', 'sourse/NetConfAgent.cpp', 'hpp/MobileClient.hpp', 'sourse/MobileClient.cpp', 'hpp/MobileService.hpp', 'sourse/MobileService.cpp'])
+inc = include_directories('hpp')
+sysrepodep = dependency('sysrepo-cpp')
+libyangdep = dependency('libyang-cpp')
+libcredep = dependency('libpcre')
+source_lib = shared_library('sourse_lib', sources: source_cpp, include_directories: inc, dependencies : [sysrepodep, libyangdep, libcredep])

@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir",
+    "command": "c++ -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC -MD -MQ 'MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o' -MF 'MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o.d' -o 'MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o' -c ../MobileClient/sourse/NetConfAgent.cpp",
+    "file": "../MobileClient/sourse/NetConfAgent.cpp"
+  },
+  {
+    "directory": "/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir",
+    "command": "c++ -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC -MD -MQ 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o' -MF 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o.d' -o 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o' -c ../MobileClient/sourse/MobileClient.cpp",
+    "file": "../MobileClient/sourse/MobileClient.cpp"
+  },
+  {
+    "directory": "/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir",
+    "command": "c++ -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC -MD -MQ 'MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o' -MF 'MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o.d' -o 'MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o' -c ../MobileClient/sourse/GeneratePath.cpp",
+    "file": "../MobileClient/sourse/GeneratePath.cpp"
+  },
+  {
+    "directory": "/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir",
+    "command": "c++ -IMobileClient/eaac78d@@sourse_lib@sha -IMobileClient -I../MobileClient -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -fPIC -MD -MQ 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o' -MF 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o.d' -o 'MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o' -c ../MobileClient/sourse/MobileService.cpp",
+    "file": "../MobileClient/sourse/MobileService.cpp"
+  },
+  {
+    "directory": "/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir",
+    "command": "c++ -Idemo@exe -I. -I.. -I../MobileClient/hpp -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -MD -MQ 'demo@exe/main.cpp.o' -MF 'demo@exe/main.cpp.o.d' -o 'demo@exe/main.cpp.o' -c ../main.cpp",
+    "file": "../main.cpp"
+  }
+]
