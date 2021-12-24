@@ -123,4 +123,72 @@ TEST_F(MobileClientTest, unregisterTestTrue)
     EXPECT_TRUE(_client->unregister(numberOne));
 }
 
+TEST_F(MobileClientTest, rejectTestFalse)
+{
+    std::pair<bool,std::string> ans{true, "Buzy"};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillOnce(testing::Return(ans));
+
+    EXPECT_FALSE(_client->reject());
+}
+
+TEST_F(MobileClientTest, rejectTestTrue)
+{
+    std::pair<bool,std::string> ans{true, "ActiveIncoming"};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillRepeatedly(testing::Return(ans));
+
+    EXPECT_CALL(*_mock, changeData(_,_))
+        .Times(4);
+
+    EXPECT_TRUE(_client->reject());
+}
+
+TEST_F(MobileClientTest, answerTestFalse)
+{
+    std::pair<bool,std::string> ans{true, "Buzy"};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillOnce(testing::Return(ans));
+
+    EXPECT_FALSE(_client->answer());
+}
+
+TEST_F(MobileClientTest, answerTestTrue)
+{
+    std::pair<bool,std::string> ans{true, "ActiveIncoming"};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillRepeatedly(testing::Return(ans));
+
+    EXPECT_CALL(*_mock, changeData(_,_))
+        .Times(2);
+
+    EXPECT_TRUE(_client->answer());
+}
+
+TEST_F(MobileClientTest, callEndTestFalse)
+{
+    std::pair<bool,std::string> ans{true, ""};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillOnce(testing::Return(ans));
+
+    EXPECT_FALSE(_client->callEnd());
+}
+
+TEST_F(MobileClientTest, callEndTestTrue)
+{
+    std::pair<bool,std::string> ans{true, "Buzy"};
+
+    EXPECT_CALL(*_mock, fetchData(_))
+        .WillOnce(testing::Return(ans));
+
+    EXPECT_CALL(*_mock, changeData(_,_))
+        .Times(4);
+
+    EXPECT_TRUE(_client->callEnd());
+}
 }
