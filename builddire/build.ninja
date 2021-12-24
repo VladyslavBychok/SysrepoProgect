@@ -19,7 +19,7 @@ rule cpp_LINKER
  description = Linking target $out
 
 rule SHSYM
- command = /usr/local/bin/meson --internal symbolextractor '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddir' $in $IMPLIB $out $CROSS
+ command = /usr/local/bin/meson --internal symbolextractor '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddire' $in $IMPLIB $out $CROSS
  description = Generating symbol file $out
  restat = 1
 
@@ -31,7 +31,7 @@ rule CUSTOM_COMMAND
  restat = 1
 
 rule REGENERATE_BUILD
- command = /usr/local/bin/meson --internal regenerate '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient' '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddir' --backend ninja
+ command = /usr/local/bin/meson --internal regenerate '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient' '/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddire' --backend ninja
  description = Regenerating build files.
  generator = 1
 
@@ -63,12 +63,19 @@ build MobileClient/eaac78d@@sourse_lib@sha/libsourse_lib.so.symbols: SHSYM Mobil
 build MobileClient/libsourse_lib.so: cpp_LINKER MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o | /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libyang-cpp.so /usr/lib/x86_64-linux-gnu/libpcre.so
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -shared -fPIC -Wl,--start-group -Wl,-soname,libsourse_lib.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libyang-cpp.so /usr/lib/x86_64-linux-gnu/libpcre.so -Wl,--end-group
 
+build Tests/e5c9d70@@demo_test@exe/sourse_MobileClientTests.cpp.o: cpp_COMPILER ../Tests/./sourse/MobileClientTests.cpp
+ DEPFILE = Tests/e5c9d70@@demo_test@exe/sourse_MobileClientTests.cpp.o.d
+ ARGS = -ITests/e5c9d70@@demo_test@exe -ITests -I../Tests -I../MobileClient/hpp -I../MobileClient/api -I../Tests/mock -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g -pthread
+
+build Tests/demo_test: cpp_LINKER Tests/e5c9d70@@demo_test@exe/sourse_MobileClientTests.cpp.o | /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so /usr/lib/x86_64-linux-gnu/libpcre.so MobileClient/eaac78d@@sourse_lib@sha/libsourse_lib.so.symbols
+ LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group MobileClient/libsourse_lib.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so /usr/lib/x86_64-linux-gnu/libpcre.so -lgtest -lgtest_main -pthread -lgmock -lgtest -Wl,--end-group '-Wl,-rpath,$$ORIGIN/../MobileClient' '-Wl,-rpath-link,/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddire/MobileClient'
+
 build demo@exe/main.cpp.o: cpp_COMPILER ../main.cpp
  DEPFILE = demo@exe/main.cpp.o.d
  ARGS = -Idemo@exe -I. -I.. -I../MobileClient/hpp -I../MobileClient/api -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++2a -g
 
 build demo: cpp_LINKER demo@exe/main.cpp.o | /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so MobileClient/eaac78d@@sourse_lib@sha/libsourse_lib.so.symbols
- LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group MobileClient/libsourse_lib.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so -Wl,--end-group '-Wl,-rpath,$$ORIGIN/MobileClient' '-Wl,-rpath-link,/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddir/MobileClient'
+ LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group MobileClient/libsourse_lib.so /usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/libsysrepo-cpp.so -Wl,--end-group '-Wl,-rpath,$$ORIGIN/MobileClient' '-Wl,-rpath-link,/home/vladyslav/Documents/version$ 2/TestProject-MobileClient/builddire/MobileClient'
 
 # Test rules
 
@@ -110,7 +117,7 @@ build meson-uninstall: CUSTOM_COMMAND PHONY
 
 build uninstall: phony meson-uninstall
 
-build all: phony MobileClient/libsourse_lib.so demo
+build all: phony MobileClient/libsourse_lib.so Tests/demo_test demo
 
 build clean: phony meson-clean
 
@@ -118,13 +125,13 @@ build meson-clean: CUSTOM_COMMAND PHONY
  COMMAND = /usr/bin/ninja -t clean
  description = Cleaning
 
-build build.ninja: REGENERATE_BUILD ../meson.build ../MobileClient/meson.build meson-private/coredata.dat
+build build.ninja: REGENERATE_BUILD ../meson.build ../MobileClient/meson.build ../Tests/meson.build meson-private/coredata.dat
  pool = console
 
 build reconfigure: REGENERATE_BUILD PHONY
  pool = console
 
-build ../meson.build ../MobileClient/meson.build meson-private/coredata.dat: phony 
+build ../meson.build ../MobileClient/meson.build ../Tests/meson.build meson-private/coredata.dat: phony 
 
 default all
 

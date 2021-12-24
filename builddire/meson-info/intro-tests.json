@@ -1,0 +1,1 @@
+[{"cmd": ["/home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/Tests/demo_test"], "env": {}, "name": "demo_test", "workdir": null, "timeout": 30, "suite": ["tutorial"], "is_parallel": true, "priority": 0, "protocol": "exitcode"}]

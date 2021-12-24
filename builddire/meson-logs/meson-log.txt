@@ -1,11 +1,11 @@
-Build started at 2021-12-16T12:18:34.336602
+Build started at 2021-12-24T10:48:22.793061
 Main binary: /usr/bin/python3
 Build Options: 
 Python system: Linux
 The Meson build system
 Version: 0.54.2
 Source dir: /home/vladyslav/Documents/version 2/TestProject-MobileClient
-Build dir: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir
+Build dir: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire
 Build type: native build
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
@@ -18,14 +18,14 @@ None of 'CPPFLAGS' are defined in the environment, not changing global flags.
 None of 'CXX_LD' are defined in the environment, not changing global flags.
 Sanity testing C++ compiler: c++
 Is cross compiler: False.
-Sanity check compiler command line: c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.cc -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compiler command line: c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.cc -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
 Sanity check compile stdout:
 
 -----
 Sanity check compile stderr:
 
 -----
-Running test binary command: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.exe
+Running test binary command: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.exe
 C++ compiler for the build machine: c++ (gcc 10.3.0 "c++ (Ubuntu 10.3.0-1ubuntu1~18.04~1) 10.3.0")
 C++ linker for the build machine: c++ ld.bfd 2.30
 None of 'AR' are defined in the environment, not changing global flags.
@@ -36,14 +36,14 @@ None of 'CPPFLAGS' are defined in the environment, not changing global flags.
 None of 'CXX_LD' are defined in the environment, not changing global flags.
 Sanity testing C++ compiler: c++
 Is cross compiler: False.
-Sanity check compiler command line: c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.cc -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
+Sanity check compiler command line: c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.cc -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.exe -pipe -D_FILE_OFFSET_BITS=64
 Sanity check compile stdout:
 
 -----
 Sanity check compile stderr:
 
 -----
-Running test binary command: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/sanitycheckcpp.exe
+Running test binary command: /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/sanitycheckcpp.exe
 C++ compiler for the host machine: c++ (gcc 10.3.0 "c++ (Ubuntu 10.3.0-1ubuntu1~18.04~1) 10.3.0")
 C++ linker for the host machine: c++ ld.bfd 2.30
 None of 'AR' are defined in the environment, not changing global flags.
@@ -74,8 +74,8 @@ Called `/usr/bin/pkg-config sysrepo-cpp --libs` -> 0
 -lsysrepo-cpp
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Running compile:
-Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n
-Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmpmz2y5b8n/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp0gow1jpl
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp0gow1jpl/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp0gow1jpl/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive 
 
 Code:
  #include<stdio.h>
@@ -96,8 +96,8 @@ Program stderr:
 
 
 Running compile:
-Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6
-Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddir/meson-private/tmptgiju4q6/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp6dmjtcnj
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp6dmjtcnj/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp6dmjtcnj/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  
@@ -141,7 +141,65 @@ Called `/usr/bin/pkg-config libpcre --libs` -> 0
 -lpcre
 None of 'PKG_CONFIG_PATH' are defined in the environment, not changing global flags.
 Run-time dependency libpcre found: YES 8.39
-Build targets in project: 2
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'gtest_main' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion gtest_main` -> 1
+
+Running compile:
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpwurhuash
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpwurhuash/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpwurhuash/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lgtest -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Running compile:
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp5pfrbdig
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp5pfrbdig/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmp5pfrbdig/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lgtest_main -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Run-time dependency GTest found: YES (prebuilt)
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'gmock' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion gmock` -> 1
+
+Pkg-config binary for MachineChoice.HOST is cached.
+Determining dependency 'gtest' with pkg-config executable '/usr/bin/pkg-config'
+PKG_CONFIG_PATH: 
+Called `/usr/bin/pkg-config --modversion gtest` -> 1
+
+Running compile:
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpn0sf45c8
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpn0sf45c8/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpn0sf45c8/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lgmock -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Running compile:
+Working directory:  /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpnvze2877
+Command line:  c++ /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpnvze2877/testfile.cpp -o /home/vladyslav/Documents/version 2/TestProject-MobileClient/builddire/meson-private/tmpnvze2877/output.exe -pipe -D_FILE_OFFSET_BITS=64 -O0 -fpermissive -Wl,--start-group -lgmock_main -Wl,--end-group -Wl,--allow-shlib-undefined 
+
+Code:
+ int main(void) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Run-time dependency GMock found: YES (prebuilt)
+Adding test "demo_test"
+Build targets in project: 3
 
 Found ninja-1.8.2 at /usr/bin/ninja
 None of 'STRIP' are defined in the environment, not changing global flags.

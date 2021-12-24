@@ -12,20 +12,21 @@ enum stateEnum
 
 class MobileClient final
 {
-
 public:
+    MobileClient();
 
+    MobileClient(std::unique_ptr<INetConfAgent> NetConf);
     /**
      * @brief Get the Name object
      * 
-     * @return std::string name object
+     * @return std::string Name object
      */
     std::string getName();
 
     /**
      * @brief Get the Number object
      * 
-     * @return std::string number
+     * @return std::string Number
      */
     std::string getNumber();
 
@@ -39,60 +40,77 @@ public:
     /**
      * @brief Get the State object
      * 
-     * @return stateEnum state object
+     * @return stateEnum State object
      */
     stateEnum getState();
 
     /**
      * @brief Set the Name object
      * 
-     * @param name [in] name from set
+     * @param [in] name Name from set
      */
     void setName(const std::string& name);
 
     /**
      * @brief Set the Incoming Number object
      *  
-     * @param incomingNumber [in] field from set Incoming number object
+     * @param [in] incomingNumber  Field from set Incoming number object
      */
     void setIncomingNumber(const std::string& incomingNumber);
 
     /**
-     * @brief register number in DataBase
+     * @brief Register number in DataBase
      * 
-     * @param number [in] number from writing in DataBase
-     * @return true successful registration
-     * @return false unsuccessful registration
+     * @param [in] number  Number from writing in DataBase
+     * @return true Successful registration
+     * @return false Unsuccessful registration
      */
-    bool Register(std::string& number);
+    bool Register(const std::string& number);
 
     /**
-     * @brief call another user
+     * @brief Call another user
      * 
-     * @param number [in] user number from call
-     * @return true successful call
-     * @return false unsuccessful call
+     * @param [in] number  User number from call
+     * @return true Successful call
+     * @return false Unsuccessful call
      */
-    bool call(std::string& number);
+    bool call(const std::string& number);
 
     /**
-     * @brief answer on incoming call
+     * @brief Answer on incoming call
      */
-    void answer(); 
+    bool answer(); 
 
     /**
-     * @brief reject on incoming call
+     * @brief Reject on incoming call
      */
-    void reject();
+    bool reject();
 
     /**
-     * @brief end call with another number
+     * @brief End call with another number
      */
-    void callEnd();
-
+    bool callEnd();
+    
+    /**
+     * @brief Reaction to changes
+     * 
+     * @param [in] value Change value
+     * @param [in] path Adress change data
+     */
     void handleModuleChange(const std::string& value,const std::string& path);
+    
+    /**
+     * @brief Unregister user
+     * 
+     * @param [in] number User number from unregister
+     * @return true Successful unregister
+     * @return false Unsuccessful unregister
+     */
+    bool unregister(const std::string& number);
+
 private:
-    NetConfAgent _agent;
+    std::unique_ptr<INetConfAgent> _agent;
+    //NetConfAgent _agent;
     GeneratePath _path;
     
     std::string _name;

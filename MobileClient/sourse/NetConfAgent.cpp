@@ -3,7 +3,7 @@
 
 NetConfAgent::NetConfAgent() : _conn(), _sess(_conn.sessionStart())
 {
-    _sess.copyConfig(sysrepo::Datastore::Running, "Network");
+    _sess.copyConfig(sysrepo::Datastore::Running, _path._model.c_str());
 }
 
 std::pair<bool, std::string> NetConfAgent::fetchData(const std::string& path)
@@ -25,6 +25,14 @@ std::pair<bool, std::string> NetConfAgent::fetchData(const std::string& path)
     return dataFetch;
 }
 
+void NetConfAgent::deleteData(const std::string& path)
+{
+    if(!path.empty())
+    {
+        _sess.deleteItem(path.c_str());
+    }
+}
+
 void NetConfAgent::changeData(const std::string& path, const std::string& str)
 {
     if (!path.empty())
@@ -37,7 +45,6 @@ void NetConfAgent::changeData(const std::string& path, const std::string& str)
 
 void NetConfAgent::subscribeForModelChange(const std::string& path, MobileClient& client)
 {    
-  
     sysrepo::ModuleChangeCb moduleChangeCb = [&](sysrepo::Session session, auto, auto, auto, auto, auto) -> sysrepo::ErrorCode
     {
         auto changeCollection = session.getChanges();
@@ -55,8 +62,8 @@ void NetConfAgent::subscribeForModelChange(const std::string& path, MobileClient
         return sysrepo::ErrorCode::Ok;
     };
 
-    _sub = _sess.onModuleChange("Network", moduleChangeCb, path.c_str(), 0, sysrepo::SubscribeOptions::DoneOnly);
-    
+    _sub = _sess.onModuleChange(_path._model.c_str(), moduleChangeCb, path.c_str(), 0, sysrepo::SubscribeOptions::DoneOnly);
+
 }
 
 void NetConfAgent::registerOperData(const std::string& path, MobileClient& client)

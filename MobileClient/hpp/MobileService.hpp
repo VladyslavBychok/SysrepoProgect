@@ -9,64 +9,64 @@ class MobileService final
 public:
 
     /**
-     * @brief main function
+     * @brief Main function
      *
      * @return int 0
      */
     int main();
 
     /**
-     * @brief register number in DataBase
+     * @brief Register number in DataBase
      *
-     * @param number [in] number from writing in DataBase
-     * @return true successful registration
-     * @return false unsuccessful registration
+     * @param [in] number Number from writing in DataBase
+     * @return true Successful registration
+     * @return false Unsuccessful registration
      */
     bool Register(std::string& number);
 
     /**
-     * @brief unregister number in DataBase
+     * @brief Unregister number in DataBase
      *
-     * @return true successful unregistration
-     * @return false unsuccessful unregistration
+     * @return true Successful unregistration
+     * @return false Unsuccessful unregistration
      */
     bool unregister();
 
     /**
      * @brief Set the Name object
      *
-     * @param name [in] name from set
+     * @param [in] name Name from set
      */
     void setName(std::string& name);
 
     /**
-     * @brief call another user
+     * @brief Call another user
      *
-     * @param number [in] user number from call
-     * @return true successful call
-     * @return false unsuccessful call
+     * @param [in] number User number from call
+     * @return true Successful call
+     * @return false Unsuccessful call
      */
     bool call(std::string& number);
 
     /**
-     * @brief end call with another number
+     * @brief End call with another number
      */
     void callEnd();
 
     /**
-     * @brief answer on incoming call
+     * @brief Answer on incoming call
      */
     void answer();
 
     /**
-     * @brief reject on incoming call
+     * @brief Reject on incoming call
      */
     void reject();
 
 private:
 
     /**
-     * @brief processing user command and call methods
+     * @brief Processing user command and call methods
      */
     void processingCommand();
 

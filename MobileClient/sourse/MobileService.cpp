@@ -57,15 +57,18 @@ void MobileService::processingCommand()
 }
 
 bool MobileService::Register(std::string& number)
-{
-    
+{    
     bool result = _mobClient.Register(number);
 
     std::cout << ">> register\n";
     return result;
 }
 
-bool MobileService::unregister(){return true;}
+bool MobileService::unregister()
+{
+    _mobClient.unregister(_path.getPath(_mobClient.getNumber(), Number));
+    return true;
+}
 
 void MobileService::setName(std::string& name)
 {

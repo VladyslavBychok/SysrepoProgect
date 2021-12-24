@@ -1,6 +1,0 @@
-# ninja log v5
-5	1959	1639649929	MobileClient/eaac78d@@sourse_lib@sha/sourse_GeneratePath.cpp.o	d97918d298e3d88b
-1	4449	1639649931	MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileClient.cpp.o	d35ac6f0e4971141
-7	4515	1639649932	demo@exe/main.cpp.o	6cf7d99a6a191ca4
-5	4575	1639649932	MobileClient/eaac78d@@sourse_lib@sha/sourse_MobileService.cpp.o	66a39615fc956ac3
-0	4682	1639649932	MobileClient/eaac78d@@sourse_lib@sha/sourse_NetConfAgent.cpp.o	5a55bd2ec1761683

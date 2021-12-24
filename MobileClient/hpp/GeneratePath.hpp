@@ -15,15 +15,28 @@ enum VariantsPath
 class GeneratePath final
 {
 public:
+    /**
+     * @brief Get the Path object
+     * 
+     * @param [in] number 
+     * @param [in] path 
+     * @return std::string Generete path
+     */
     std::string getPath(std::string number, VariantsPath path);
-    const std::string _model = "/Network";
+    
+    /**
+     * @brief Return model name
+     * 
+     */
+    const std::string _model = "Network";
+
 private:
     std::string _path;
     
     
-    const std::string _subscriber = _model + ":commutator/subscribers/subscriber[number = 'KEY']";
-    const std::string _pathName = _model + ":commutator/subscribers/subscriber[number = 'KEY']/userName";
-    const std::string _pathIncomingNumber = _model + ":commutator/subscribers/subscriber[number = 'KEY']/incomingNumber";
-    const std::string _pathState = _model + ":commutator/subscribers/subscriber[number = 'KEY']/state";
-    const std::string _pathNumber = _model + ":commutator/subscribers/subscriber[number = 'KEY']/number";
+    const std::string _subscriber         = "/Network:commutator/subscribers/subscriber[number = 'KEY']";
+    const std::string _pathName           = "/Network:commutator/subscribers/subscriber[number = 'KEY']/userName";
+    const std::string _pathIncomingNumber = "/Network:commutator/subscribers/subscriber[number = 'KEY']/incomingNumber";
+    const std::string _pathNumber         = "/Network:commutator/subscribers/subscriber[number = 'KEY']/number";
+    const std::string _pathState          = "/Network:commutator/subscribers/subscriber[number = 'KEY']/state";
 };

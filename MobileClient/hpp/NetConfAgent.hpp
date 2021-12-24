@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../api/INetConfAgent.hpp"
+#include "INetConfAgent.hpp"
 
 class NetConfAgent : public INetConfAgent
 {
@@ -9,29 +9,41 @@ class NetConfAgent : public INetConfAgent
      * @brief Construct a new Netopeer Config Agent object
      */
     NetConfAgent();
+    
     /**
-     * @brief method for subscribe for change model with adress path
+     * @brief Method for subscribe for change model with adress path
      * 
-     * @param path [in] const param, model adress 
-     * @param client [in] MobileClient object for calling method handleModuleChange in Call Back
+     * @param [in] path Const param, model adress 
+     * @param [in] client MobileClient object for calling method handleModuleChange in Call Back
      */
     void subscribeForModelChange(const std::string& path, MobileClient& client) override;
     /**
-     * @brief method for read field in DataBase with adress path
+     * @brief Method for read field in DataBase with adress path
      * 
-     * @param path [in] adress of DataBase
-     * @return std::pair<bool,std::string> first - status reading field, second - field in DataBase
+     * @param [in] path Adress of DataBase
+     * @return std::pair<bool,std::string> First - status reading field, second - field in DataBase
      */
     std::pair<bool,std::string> fetchData(const std::string& path) override;
     /**
-     * @brief method for change or set field in DataBase with adress path
+     * @brief Method for change or set field in DataBase with adress path
      * 
-     * @param path [in] adress of DataBase
-     * @param str [in] the value that is set
+     * @param [in] path Adress of DataBase
+     * @param [in] str The value that is set
      */
     void changeData(const std::string& path, const std::string& str) override;
-
+    /**
+     * @brief Register operData from user number
+     * 
+     * @param [in] path Adress in dataBase
+     * @param [in] client Client from register 
+     */
     void registerOperData(const std::string& path, MobileClient& client) override;    
+    /**
+     * @brief Delete subscriber from number
+     * 
+     * @param [in] path Adress in dataBase
+     */
+    void deleteData(const std::string& path);
 
     private:
 
