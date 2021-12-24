@@ -6,12 +6,12 @@
 
 namespace
 {
-const std::string pathNumberOne = "/Network:commutator/subscribers/subscriber[number = '123']/number";
-const std::string pathNumberTwo = "/Network:commutator/subscribers/subscriber[number = '234']/number";
-const std::string pathStateTwo = "/Network:commutator/subscribers/subscriber[number = '234']/state";
-const std::string name = "John";
-const std::string numberOne = "123";
-const std::string numberTwo = "234";
+const std::string PATH_NUMBER_ONE = "/Network:commutator/subscribers/subscriber[number = '123']/number";
+const std::string PATH_NUMBER_TWO = "/Network:commutator/subscribers/subscriber[number = '234']/number";
+const std::string PATH_STATE_TWO = "/Network:commutator/subscribers/subscriber[number = '234']/state";
+const std::string NAME = "John";
+const std::string NUMBER_ONE = "123";
+const std::string NUMBER_TWO = "234";
 }
 
 using testing::StrictMock;
@@ -42,24 +42,24 @@ protected:
     
 };
 
-TEST_F(MobileClientTest, setNameTest)
+TEST_F(MobileClientTest, setNAMETest)
 {
     EXPECT_CALL(*_mock, changeData(_,_)).Times(1);
-    _client->setName(name);
-    EXPECT_EQ(_client->getName(), name);
+    _client->setName(NAME);
+    EXPECT_EQ(_client->getName(), NAME);
 }
 
 TEST_F(MobileClientTest, setIncomingNumberTest)
 {
-    _client->setIncomingNumber(numberOne);
-    EXPECT_EQ(_client->getIncomingNumber(),numberOne);
+    _client->setIncomingNumber(NUMBER_ONE);
+    EXPECT_EQ(_client->getIncomingNumber(),NUMBER_ONE);
 }
 
 TEST_F(MobileClientTest, RegisterTestTrue)
 {
     std::pair<bool,std::string> ans{false, ""};
 
-    EXPECT_CALL(*_mock, fetchData(pathNumberOne))
+    EXPECT_CALL(*_mock, fetchData(PATH_NUMBER_ONE))
         .WillOnce(testing::Return(ans));
 
     EXPECT_CALL(*_mock, changeData(_,_))
@@ -67,17 +67,17 @@ TEST_F(MobileClientTest, RegisterTestTrue)
     EXPECT_CALL(*_mock, subscribeForModelChange(_,_))
         .Times(1);
 
-    EXPECT_TRUE(_client->Register(numberOne));
+    EXPECT_TRUE(_client->Register(NUMBER_ONE));
 }
 
 TEST_F(MobileClientTest, RegisterTestFalse)
 {
-    std::pair<bool,std::string> ans{true, pathNumberOne};
+    std::pair<bool,std::string> ans{true, PATH_NUMBER_ONE};
 
-    EXPECT_CALL(*_mock, fetchData(pathNumberOne))
+    EXPECT_CALL(*_mock, fetchData(PATH_NUMBER_ONE))
         .WillOnce(testing::Return(ans));
 
-    EXPECT_FALSE(_client->Register(numberOne));
+    EXPECT_FALSE(_client->Register(NUMBER_ONE));
 }
 
 TEST_F(MobileClientTest, callTestTrue)
@@ -90,7 +90,7 @@ TEST_F(MobileClientTest, callTestTrue)
     EXPECT_CALL(*_mock, changeData(_,_))
         .Times(4);
 
-    EXPECT_TRUE(_client->call(pathNumberTwo));
+    EXPECT_TRUE(_client->call(PATH_NUMBER_TWO));
 }
 
 TEST_F(MobileClientTest, callTestFalse)
@@ -100,7 +100,7 @@ TEST_F(MobileClientTest, callTestFalse)
     EXPECT_CALL(*_mock, fetchData(_))
         .WillOnce(testing::Return(ans));
 
-    EXPECT_FALSE(_client->call(pathNumberTwo));
+    EXPECT_FALSE(_client->call(PATH_NUMBER_TWO));
 }
 
 TEST_F(MobileClientTest, unregisterTestFalse)
@@ -110,7 +110,7 @@ TEST_F(MobileClientTest, unregisterTestFalse)
     EXPECT_CALL(*_mock, fetchData(_))
         .WillOnce(testing::Return(ans));
 
-    EXPECT_FALSE(_client->unregister(numberOne));
+    EXPECT_FALSE(_client->unregister(NUMBER_ONE));
 }
 
 TEST_F(MobileClientTest, unregisterTestTrue)
@@ -120,7 +120,7 @@ TEST_F(MobileClientTest, unregisterTestTrue)
     EXPECT_CALL(*_mock, fetchData(_))
         .WillOnce(testing::Return(ans));
 
-    EXPECT_TRUE(_client->unregister(numberOne));
+    EXPECT_TRUE(_client->unregister(NUMBER_ONE));
 }
 
 TEST_F(MobileClientTest, rejectTestFalse)

@@ -40,9 +40,18 @@ bool MobileClient::unregister(const std::string& number)
 
 void MobileClient::handleModuleChange(const std::string& value,const std::string& path)
 {
-    if(value == "ActiveIncoming"){
+    static std::string lastValue;
+
+    if(value == "ActiveIncoming")
         std::cout << ">> Incoming call ..." << std::endl;
-    }
+
+    else if(value == "Buzy")
+        std::cout << ">> Start call" << std::endl;
+
+    else if(value == "Idle" && lastValue == "Buzy")
+        std::cout << ">> Finish call" << std::endl;
+
+    lastValue = value;        
 }
 
 void MobileClient::setName(const std::string& name)
@@ -76,6 +85,8 @@ bool MobileClient::call(const std::string& number)
 
         return true;
     }
+
+    return false;
 }
 
 bool MobileClient::Register(const std::string& number)
@@ -138,8 +149,6 @@ bool MobileClient::answer()
 
         _state = Buzy;
 
-        std::cout << ">> Answer call." << std::endl;
-
         return true;
     }
 
@@ -158,8 +167,6 @@ bool MobileClient::callEnd()
 
         _incomingNumber = "\0";
         _state = Idle;
-
-        std::cout << ">> End call." << std::endl;
 
         return true;
     }

@@ -14,6 +14,8 @@ int MobileService::main()
             processingCommand();
         }
     }
+
+    return 0;
 }
 
 void MobileService::processingCommand()
@@ -60,7 +62,6 @@ bool MobileService::Register(std::string& number)
 {    
     bool result = _mobClient.Register(number);
 
-    std::cout << ">> register\n";
     return result;
 }
 
